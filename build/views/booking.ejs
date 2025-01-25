@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../build/styles/booking.css">
+    <title>Carrental-Booking</title>
+</head>
+<body class="grad">
+  
+    <div class="heading ">BOOK YOUR CAR</div>
+    <div class="form-container">
+
+        <div class="form-container-content grad2">
+          <form action="/" method="get">
+            <div class="banner grad2">
+              <h1>Car Booking Form</h1>
+            </div>
+            <div class="item">
+              <p>Name</p>
+              <div class="name-item">
+                <input type="text" name="firstname" placeholder="First" />
+                <input type="text" name="lastname" placeholder="Last" />
+              </div>
+            </div>
+            <div class="item">
+              <p>Email</p>
+              <input type="email" name="email"/>
+            </div>
+            <div class="item">
+              <p>Phone</p>
+              <input type="text" name="phoneno"/>
+            </div>
+            <div class="item">
+              <p>Number of Passengers</p>
+              <input type="text" name="passengercount"/>
+            </div>
+            <div class="item">
+              <p>Pick Up Date</p>
+              <input type="date" name="pickupdate" id="pickupdate" onchange="leave()" min="2022-12-28" max="2023-12-30"/>
+            </div>
+            <div class="item">
+              <p>Drop Off Date</p>
+              <input type="date" name="dropoffdate" id="dropoffdate" onchange="validate()" min="2022-12-30" max="2023-12-30"/>
+            </div>
+            <div class="form-component">
+              <span class="">Days:</span>
+              <input type="text" name="days" class="inline special" id="cnt-day" value="" readonly>
+              <div>
+                <span class="">Price:</span><span id="Price"> <%= car.rate %> * days</span>
+              </div>
+            </div>
+            <div class="btn-block">
+              <button type="submit">BOOK NOW</button>
+            </div>
+            <input type="text" class="hidden" name="carcode" placeholder="car Alloted" value="<%= car._id %>" readonly />
+            <input type="text" class="hidden" name="carrate" placeholder="car Alloted" value="<%= car.rate %>" readonly />
+          </form>
+        </div> 
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../../build/scripts/booking.js"></script>
+</body>
+</html>

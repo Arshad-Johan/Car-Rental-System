@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentalcar-Home</title>
+    <link rel="stylesheet" href="../../build/styles/output.css">
+    <script src="https://kit.fontawesome.com/38b951bfd3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="../Images/bg-8.png" alt=""></a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        <div class="header-btn">
+          <% if(locals.user) { %>
+          
+            <a href="/user/account" class="sign-in">My Account</a>
+              <a href="/signout" class="sign-in">Sign Out</a>
+          <% } %>
+
+          <% if(!locals.user) { %>
+              <a href="/signup" class="sign-in">Sign Up</a>
+              <a href="/login" class="sign-in">Sign In</a>
+       <% } %>
+          
+          
+      </div>
+    </header>
+
+
+    <section class="display-section">
+          <div class="display-image">
+            <img class="image" src="./Images/banner6.jpg" alt="main screen" style="width: 1000px;height :550px;">
+          </div>
+    </section>
+
+
+    <section>
+      <p class="availaible-cars-heading">CARS AVAILAIBLE</p>
+
+      <div id="cars-display" class="flex-row">
+
+        <% for(let i of cars) { %>
+           <div class="cars-display-data">
+            <div class="cars-display-image-container">
+                <img src="<%= i.src %>" class="cars-display-image" alt="car image">
+            </div>
+            <div class="cars-display-info">
+                <div class="car-name">
+                    <span><%= i.carname %></span>
+                </div>
+                <div class="type-rate-info">
+                    <div class="car-type">
+                       <span >Type : <%= i.type%> </span>
+                    </div>
+                    <div>|
+                    </div>
+                    <div class="car-rate">
+                       <span>Rate : <%= i.rate%> per day</span>
+                    </div> 
+                    
+                </div>
+                <div class="book-btn-container">
+                  <% if(locals.user) { %>
+                    <a href="/user/booking/<%= i._id%>"> <button class="book-btn" data-id= <%= i._id %> >BOOK NOW</button></a>
+                    <% } %>
+                    <% if(!locals.user) { %>
+                      <a href="/login"> <button class="book-btn" data-id=${cars[i].id} >login</button></a>
+              <% } %>
+    
+      
+                
+              </div>
+            </div>
+        </div>
+        <% } %> 
+      </div>
+
+    </section>
+ 
+
+    
+    <footer>
+        <div class="center">
+          Copyright &copy; &nbsp;Arshad Johan &nbsp;   All rights reserved
+        </div>
+    </footer>
+</body>
+</html>
