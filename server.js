@@ -31,7 +31,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/about'));
 app.use('/', require('./routes/contact'));
-
+app.use('/', require('./routes/book')); // Add this line
 
 app.listen(port, () => {
     console.log('Server running at port', port);

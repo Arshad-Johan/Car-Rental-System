@@ -74,10 +74,13 @@ header .navbar a:hover {
 .display-section {
   margin-top: 50px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 3% 20%;
 }
 
 .display-section  {
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 1200px;
   border-radius: 10px;
@@ -189,7 +192,13 @@ footer .center {
     width: 90%;
   }
 }
-
+.available-cars-heading{
+  font-size: 4rem;
+  color: #333;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin: 3% 35%;
+}
 .image {
   width: 100%; /* Makes the image width responsive */
   max-width: 1000px; /* Restricts the image to a maximum width */

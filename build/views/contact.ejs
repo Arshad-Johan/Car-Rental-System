@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RentalCar</title>
-    <link rel="stylesheet" href="../../build/styles/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
+      /* Utility Classes */
+      :root {
+        --primary-color: #4a90e2;
+        --secondary-color: #ffffff;
+        --background-color: #f3f4f6;
+        --text-color: #333333;
+        --border-radius: 8px;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -17,34 +26,143 @@
         text-decoration: none;
         font-family: "Poppins", sans-serif;
       }
+
       body {
-        background-image: url("./firmbee-com-SpVHcbuKi6E-unsplash.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: -1;
+        background-color: var(--background-color);
+        color: var(--text-color);
       }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary-color);
+        padding: 1rem 2rem;
+        color: var(--secondary-color);
+      }
+
+      .logo img {
+        width: 50px;
+        height: auto;
+        border-radius: var(--border-radius);
+      }
+
+      .navbar {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .navbar li a {
+        color: var(--secondary-color);
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .navbar li a:hover {
+        color: #d4e5f9;
+      }
+
+      .header-btn a {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .header-btn a:hover {
+        background-color: #d4e5f9;
+      }
+
+      #contact {
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        background-color: var(--background-color);
+      }
+
+      .left-side, .right-side {
+        background-color: var(--secondary-color);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+
+      .details {
+        margin-bottom: 2rem;
+      }
+
+      .details i {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+      }
+
+      .topic {
+        font-weight: bold;
+        margin: 0.5rem 0;
+      }
+
+      .topic-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .input-box input, .input-box textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border: 1px solid #ccc;
+        border-radius: var(--border-radius);
+      }
+
+      .button input {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button input:hover {
+        background-color: #3a7ccd;
+      }
+
       #main {
         display: flex;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        margin: 4rem 0;
       }
+
       .box1 {
-        margin: auto;
-        padding: 9% 15%;
-        margin: 5%;
+        background-color: var(--secondary-color);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
       }
-      .cnt {
-        width: 35%;
-        padding: 7% 0;
+
+      .box1 a {
+        display: block;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
       }
-      #contact {
-        margin-top: 10rem;
+
+      .box1 a:hover {
+        text-decoration: underline;
       }
-      /* Additional styles can be added here */
     </style>
   </head>
   <body>
     <header>
-      <a href="#" class="logo"><img src="img/jeep.jpg" alt="" /></a>
       <ul class="navbar">
         <li><a href="/home">Home</a></li>
       </ul>
@@ -55,58 +173,53 @@
     </header>
 
     <section id="contact">
-      <div class="container">
-        <div class="content">
-          <div class="left-side">
-            <div class="address details">
-              <i class="fas fa-map-marker-alt"></i>
-              <div class="topic">Address</div>
-              <div class="text-one">KNIT SULTANPUR</div>
-              <div class="text-two">SULTANPUR</div>
-            </div>
-            <div class="phone details">
-              <i class="fas fa-phone-alt"></i>
-              <div class="topic">Phone</div>
-              <div class="text-one">+91 XXXXXXXXXX</div>
-              <div class="text-two">+91 XXXXXXXXXX</div>
-            </div>
-            <div class="email details">
-              <i class="fas fa-envelope"></i>
-              <div class="topic">Email</div>
-              <div class="text-one">carrental@gmail.com</div>
-              <div class="text-two">carrental@gmail.com</div>
-            </div>
-          </div>
-          <div class="right-side">
-            <div class="topic-text">Send us a message</div>
-            <p>If you have any query related to Booking, you can send us message from here. It's our pleasure to help you.</p>
-            <form action="/submit-contact" method="POST">
-              <div class="input-box">
-                <input type="text" placeholder="Enter your name" required>
-              </div>
-              <div class="input-box">
-                <input type="email" placeholder="Enter your email" required>
-              </div>
-              <div class="input-box message-box">
-                <textarea placeholder="Enter your message" required></textarea>
-              </div>
-              <div class="button">
-                <input type="submit" value="Send Now">
-              </div>
-            </form>
-          </div>
+      <div class="left-side">
+        <div class="address details">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="topic">Address</div>
+          <div class="text-one">PSG College of Technology</div>
+          <div class="text-two">Coimbatore</div>
         </div>
+        <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+91 XXXXXXX029</div>
+          <div class="text-two">+91 XXXXXXX781</div>
+        </div>
+        <div class="email details">
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">johanlovely46@gmail.com</div>
+          <div class="text-two">chinnadeva46@gmail.com</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">Send us a message</div>
+        <p>If you have any query related to Booking, you can send us message from here. It's our pleasure to help you.</p>
+        <form action="/submit-contact" method="POST">
+          <div class="input-box">
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <input type="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box message-box">
+            <textarea placeholder="Enter your message" required></textarea>
+          </div>
+          <div class="button">
+            <input type="submit" value="Send Now">
+          </div>
+        </form>
       </div>
     </section>
 
     <div id="main">
       <div class="box1">
         <h3>Reach Us</h3>
-        <p><a href="https://www.googlemaps.com" target="_blank"><i class="fa-sharp fa-solid fa-location-dot"></i>DEMO TEST</a></p>
-        <p><a href="https://mail.google.com" target="_blank"><i class="fa-regular fa-envelope"></i>test@demo.com</a></p>
-        <p><a href="#"><i class="fa-thin fa-phone"></i>2553255311</a></p>
+        <p><a href="https://www.googlemaps.com" target="_blank"><i class="fas fa-location-dot"></i>DEMO TEST</a></p>
+        <p><a href="https://mail.google.com" target="_blank"><i class="fas fa-envelope"></i>johanlovely46@gmail.com</a></p>
+        <p><a href="#"><i class="fas fa-phone"></i>XXXXXXX029</a></p>
       </div>
     </div>
   </body>
-  <script src="https://kit.fontawesome.com/3682bc7295.js" crossorigin="anonymous"></script>
 </html>
