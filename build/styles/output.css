@@ -76,7 +76,7 @@ header .navbar a:hover {
   text-align: center;
 }
 
-.display-section .image {
+.display-section  {
   width: 100%;
   height: auto;
   max-width: 1200px;
@@ -188,4 +188,12 @@ footer .center {
   .cars-display-data {
     width: 90%;
   }
+}
+
+.image {
+  width: 100%; /* Makes the image width responsive */
+  max-width: 1000px; /* Restricts the image to a maximum width */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Prevents inline spacing issues */
+  margin: 0 auto; /* Centers the image */
 }
